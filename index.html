@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Sohaip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #FBF1E1;
+    --navy-2: #F2DFC0;
+    --yellow: #C1603C;
+    --coral: #E3A857;
+    --mint: #74875A;
+    --cream: #3B2A20;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Poppins', sans-serif;
+    overflow-x:hidden;
+    position: relative;
+  }
+  body::before{
+    content:'';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(193,96,60,0.10) 0px, transparent 55%),
+      radial-gradient(circle at 85% 12%, rgba(227,168,87,0.14) 0px, transparent 50%),
+      radial-gradient(circle at 78% 82%, rgba(116,135,90,0.12) 0px, transparent 55%),
+      radial-gradient(circle at 15% 85%, rgba(193,96,60,0.08) 0px, transparent 50%);
+    background-color: transparent;
+  }
+  .wrap, section, .hero{ position: relative; z-index: 1; }
+  h1,h2,h3,.display{
+    font-family: 'Baloo 2', cursive;
+  }
+  .wrap{
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height: 100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    padding: 80px 24px;
+  }
+  .balloon{
+    position:absolute;
+    border-radius:50%;
+    opacity:0.9;
+    animation: float 7s ease-in-out infinite;
+  }
+  .balloon::after{
+    content:'';
+    position:absolute;
+    bottom:-40px;
+    left:50%;
+    width:1px;
+    height:40px;
+    background: rgba(59,42,32,0.35);
+  }
+  @keyframes float{
+    0%,100%{ transform: translateY(0) rotate(-3deg); }
+    50%{ transform: translateY(-22px) rotate(3deg); }
+  }
+  .b1{ width:70px; height:86px; background: var(--coral); top:12%; left:8%; animation-delay:0s;}
+  .b2{ width:56px; height:70px; background: var(--mint); top:20%; right:10%; animation-delay:1.2s;}
+  .b3{ width:44px; height:56px; background: var(--yellow); bottom:16%; left:14%; animation-delay:2.1s;}
+  .b4{ width:60px; height:76px; background: var(--yellow); bottom:10%; right:8%; animation-delay:0.6s;}
+
+  .eyebrow-hero{
+    color: var(--yellow);
+    font-weight:600;
+    letter-spacing:0.02em;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  .hero h1{
+    font-size: clamp(40px, 9vw, 76px);
+    line-height: 1.05;
+    color: var(--cream);
+    text-shadow: 4px 4px 0 var(--yellow);
+    font-weight: 800;
+  }
+  .hero p{
+    max-width: 480px;
+    margin-top: 22px;
+    font-size: 18px;
+    color: var(--cream);
+    opacity:0.9;
+    line-height: 1.6;
+  }
+  .scroll-cue{
+    margin-top: 56px;
+    font-size: 14px;
+    color: var(--cream);
+    opacity: 0.55;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding: 90px 0;
+    border-top: 1px dashed rgba(59,42,32,0.15);
+  }
+  .tag{
+    display:inline-block;
+    background: var(--yellow);
+    color: var(--cream);
+    font-weight:600;
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+  }
+  h2{
+    font-size: clamp(28px, 5vw, 40px);
+    color: var(--cream);
+    margin-bottom: 28px;
+    line-height:1.15;
+  }
+  .lede{
+    font-size: 17px;
+    opacity: 0.85;
+    max-width: 520px;
+    margin-bottom: 34px;
+    line-height: 1.6;
+  }
+
+  /* Picky Files */
+  .file-card{
+    background: var(--navy-2);
+    border: 2px solid rgba(193,96,60,0.35);
+    border-radius: 18px;
+    padding: 26px 28px;
+    margin-bottom: 16px;
+    position:relative;
+  }
+  .file-card .stamp{
+    position:absolute;
+    top:20px;
+    right:22px;
+    font-family:'Baloo 2', cursive;
+    font-size: 12px;
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    padding: 3px 9px;
+    border-radius: 6px;
+    transform: rotate(8deg);
+  }
+  .file-card h3{
+    font-size: 19px;
+    color: var(--yellow);
+    margin-bottom: 8px;
+    padding-right: 90px;
+  }
+  .file-card p{
+    font-size: 15px;
+    opacity: 0.85;
+    line-height: 1.55;
+  }
+
+  /* Hamster Chronicles */
+  .hamster-box{
+    background: linear-gradient(155deg, var(--navy-2), var(--navy));
+    border-radius: 22px;
+    padding: 36px;
+    border: 2px solid rgba(116,135,90,0.35);
+  }
+  .hamster-box .wheel{
+    font-size: 46px;
+    margin-bottom: 14px;
+    display:inline-block;
+    animation: spin 3s linear infinite;
+  }
+  @keyframes spin{ to { transform: rotate(360deg); } }
+  .hamster-box p{
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 14px;
+  }
+  .hamster-box p:last-child{ margin-bottom:0; }
+  .hamster-box strong{ color: var(--mint); }
+
+  /* Official Statement */
+  .certificate{
+    background: var(--cream);
+    color: var(--navy);
+    border-radius: 20px;
+    padding: 44px 36px;
+    text-align:center;
+    position: relative;
+    border: 3px solid var(--yellow);
+  }
+  .certificate::before{
+    content: '★';
+    position:absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--yellow);
+    color: var(--navy);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 16px;
+  }
+  .certificate .cert-label{
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--yellow);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .certificate h3{
+    font-family:'Baloo 2', cursive;
+    font-size: 24px;
+    margin-bottom: 18px;
+    color: var(--navy);
+  }
+  .certificate p{
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .certificate .sign{
+    margin-top: 22px;
+    font-size: 14px;
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  /* Wish button */
+  .wish-zone{
+    text-align:center;
+    padding: 100px 0 120px;
+  }
+  .wish-zone h2{ margin-bottom: 12px; }
+  .wish-zone .lede{ margin-left:auto; margin-right:auto; }
+  .wish-btn{
+    background: var(--coral);
+    color: var(--cream);
+    border: none;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 18px 40px;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #A97830;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .wish-btn:active{
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #A97830;
+  }
+  .wish-note{
+    margin-top: 22px;
+    font-size: 14px;
+    opacity: 0;
+    color: var(--mint);
+    transition: opacity 0.4s ease;
+  }
+  .wish-note.show{ opacity: 0.9; }
+
+  /* Our Song */
+  .song-btn{
+    background: var(--mint);
+    color: var(--navy);
+    border: none;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 18px 40px;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #4F5E3D;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+  }
+  .song-btn:active{
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #4F5E3D;
+  }
+  .song-note{
+    margin-top: 22px;
+    font-size: 14px;
+    opacity: 0;
+    color: var(--yellow);
+    transition: opacity 0.4s ease;
+  }
+  .song-note.show{ opacity: 0.9; }
+  .vinyl{
+    display:inline-block;
+    font-size: 20px;
+  }
+  .vinyl.spin{
+    animation: spin 2.5s linear infinite;
+  }
+
+  /* Gallery */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 10px;
+  }
+  @media (max-width: 560px){
+    .gallery-grid{ grid-template-columns: 1fr; }
+  }
+  .polaroid{
+    background: var(--cream);
+    padding: 10px 10px 16px;
+    border-radius: 6px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  }
+  .polaroid:nth-child(odd){ transform: rotate(-2.5deg); }
+  .polaroid:nth-child(even){ transform: rotate(2deg); }
+  .polaroid img, .polaroid video{
+    width: 100%;
+    display:block;
+    border-radius: 3px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    background: #000;
+  }
+  .polaroid .cap{
+    font-family: 'Baloo 2', cursive;
+    color: var(--navy);
+    font-size: 15px;
+    text-align:center;
+    padding-top: 10px;
+    line-height: 1.35;
+  }
+
+  /* Awards */
+  .award-list{
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+  }
+  .award-row{
+    display:flex;
+    align-items:flex-start;
+    gap: 16px;
+    background: var(--navy-2);
+    border: 2px solid rgba(227,168,87,0.35);
+    border-radius: 16px;
+    padding: 20px 24px;
+  }
+  .award-trophy{
+    font-size: 28px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .award-title{
+    font-family: 'Baloo 2', cursive;
+    color: var(--yellow);
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  .award-desc{
+    font-size: 14.5px;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  /* Gym Bro Files */
+  .gym-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+    margin-bottom: 34px;
+  }
+  .gym-list li{
+    display:flex;
+    align-items:flex-start;
+    gap: 12px;
+    font-size: 15.5px;
+    opacity: 0.88;
+    line-height: 1.5;
+  }
+  .gym-list li::before{
+    content: '💪';
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+
+  /* Things You're Good At */
+  .skills-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+  }
+  .skills-list li{
+    display:flex;
+    align-items:flex-start;
+    gap: 12px;
+    font-size: 16.5px;
+    font-family: 'Baloo 2', cursive;
+    color: var(--cream);
+  }
+  .skills-list li::before{
+    content: '⭐';
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+
+  footer{
+    text-align:center;
+    padding: 40px 24px 60px;
+    font-size: 13px;
+    opacity: 0.4;
+  }
+
+  /* confetti */
+  .confetti-piece{
+    position: fixed;
+    top: -20px;
+    width: 9px;
+    height: 14px;
+    z-index: 999;
+    pointer-events:none;
+    animation: fall linear forwards;
+  }
+  @keyframes fall{
+    to{ transform: translateY(110vh) rotate(540deg); opacity:0.9; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .balloon, .wheel, .confetti-piece{ animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="balloon b1"></div>
+  <div class="balloon b2"></div>
+  <div class="balloon b3"></div>
+  <div class="balloon b4"></div>
+  <div class="eyebrow-hero">A very official birthday website</div>
+  <h1>Happy Birthday,<br>Sohaip 🎂</h1>
+  <p>Certified picky legend. Professional hamster trainer. My favorite human on the planet, no contest.</p>
+  <button class="song-btn" onclick="toggleSong()" style="margin-top:32px;">
+    <span class="vinyl" id="vinylIcon">💿</span>
+    <span id="songBtnLabel">Play our song</span>
+  </button>
+  <div class="song-note" id="songNote">This one's ours. Happy birthday. 🎶</div>
+  <audio id="ourSong" src="our-song.mp3" preload="none"></audio>
+  <div class="scroll-cue">scroll down, there's a whole case file on you ↓</div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">Exhibit A</span>
+    <h2>The Picky Files</h2>
+    <p class="lede">Everyone knows it. It's basically your whole personality. So here's the official record.</p>
+
+    <div class="file-card">
+      <span class="stamp">CONFIRMED</span>
+      <h3>The Selectiveness</h3>
+      <p>You could turn down a five-star meal for one specific reason nobody else can predict. It's a skill, honestly. Michelin should call you.</p>
+    </div>
+    <div class="file-card">
+      <span class="stamp">STILL TRUE</span>
+      <h3>The Standards</h3>
+      <p>You have ridiculously high standards.<br>So naturally, you ended up with me.<br>Honestly? Iconic decision.</p>
+    </div>
+    <div class="file-card">
+      <span class="stamp">NO NOTES</span>
+      <h3>The One Exception</h3>
+      <p>Picky about literally everything, yet you've never once been picky about loving me. Suspicious. I'll allow it.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">Exhibit B</span>
+    <h2>The Hamster Chronicles</h2>
+    <p class="lede">A true story, told with love and mild concern for that poor animal.</p>
+    <div class="hamster-box">
+      <span class="wheel">🐹</span>
+      <p>Once upon a time, there was a hamster. A regular hamster, living a regular hamster life. Then <strong>you</strong> showed up.</p>
+      <p>Somehow, that hamster ended up running on its wheel more than any hamster in recorded history. Scientists are baffled. I am not — I know exactly how much energy you bring into a room, and apparently the hamster caught it too.</p>
+      <p>If a small rodent can be inspired to run marathons just from being around you, imagine what you do to me.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">Exhibit C</span>
+    <h2>The Sohaip Awards — 2026 Edition</h2>
+    <p class="lede">Categories, winners, and zero suspense about who takes them all.</p>
+    <div class="award-list">
+      <div class="award-row">
+        <span class="award-trophy">🏆</span>
+        <div>
+          <div class="award-title">Best Boyfriend</div>
+          <div class="award-desc">Unfortunately, the competition was never really fair.</div>
+        </div>
+      </div>
+      <div class="award-row">
+        <span class="award-trophy">🏆</span>
+        <div>
+          <div class="award-title">Most Annoying Person I Still Choose</div>
+          <div class="award-desc">An undefeated record.</div>
+        </div>
+      </div>
+      <div class="award-row">
+        <span class="award-trophy">🏆</span>
+        <div>
+          <div class="award-title">Best Person To Stay Up Until Sunrise With</div>
+          <div class="award-desc">Especially before Eid prayer. We have evidence.</div>
+        </div>
+      </div>
+      <div class="award-row">
+        <span class="award-trophy">🏆</span>
+        <div>
+          <div class="award-title">Most Likely To Make Me Laugh When I'm Mad</div>
+          <div class="award-desc">Highly inconvenient.</div>
+        </div>
+      </div>
+      <div class="award-row">
+        <span class="award-trophy">🏆</span>
+        <div>
+          <div class="award-title">Person I'd Pick Again</div>
+          <div class="award-desc">Every single time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">🏋🏻‍♂️ Exhibit — The Gym Bro Files</span>
+    <h2>A Completely Unnecessary Amount of Gym</h2>
+    <ul class="gym-list">
+      <li>Goes to the gym like he's being paid for it.</li>
+      <li>Somehow every conversation can turn into something about training.</li>
+      <li>Has more gym clothes than actual normal clothes.</li>
+      <li>Says "last set" approximately 17 times.</li>
+      <li>Will disappear for hours and come back like he just fought a war.</li>
+    </ul>
+    <div class="gallery-grid">
+      <div class="polaroid">
+        <img src="gym-1.jpeg">
+      </div>
+      <div class="polaroid">
+        <img src="gym-2.jpeg">
+      </div>
+      <div class="polaroid">
+        <img src="gym-3.jpeg">
+      </div>
+      <div class="polaroid">
+        <img src="gym-4.jpeg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">🏆 Exhibit — The Things You're Good At</span>
+    <h2>The Things You're Good At</h2>
+    <ul class="skills-list">
+      <li>Training people.</li>
+      <li>Working hard.</li>
+      <li>Going after what you want.</li>
+      <li>Being ridiculously committed to the gym.</li>
+      <li>Making me laugh.</li>
+      <li>Being my best friend.</li>
+      <li>Being my boyfriend.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">A letter for you 🤍</span>
+    <h2>A Letter For You</h2>
+    <div class="certificate">
+      <div class="cert-label">no jokes this time, I promise</div>
+      <h3>somehow still the person I choose to annoy every single day</h3>
+      <p>It's actually crazy to think that we've known each other for 8 years. Six years of friendship, two years of being together, and somehow I still feel like there are a million things I'm discovering about you. We literally grew up together, watched each other change, made memories we probably weren't supposed to make, stayed up way too late talking, laughed at the stupidest things, and somehow ended up here.</p>
+      <p>And honestly, if someone had told me years ago that the annoying person I knew back then would become the person I'd love this much, I probably would've laughed at them. But here we are.</p>
+      <p>I love the way you are so unapologetically yourself. I love your ambition, the way you think, the way you care about the people you love, and even the little things you do that you probably don't realize I notice. I love our stupid conversations, our inside jokes, the random moments that somehow become my favorite memories, and the feeling that I can always be completely myself around you.</p>
+      <p>You're not perfect, obviously.<br>Actually, sometimes you're unbelievably annoying.<br>But unfortunately for you, I love you anyway. 🤍</p>
+      <p>Thank you for being my safe place, my favorite person to talk to, my best friend before anything else, and the person I get to love in a way that feels so natural. Thank you for every memory we've made and every moment you've made me smile without even trying.</p>
+      <p>I hope this year gives you everything you've been working for. I hope you achieve every goal you've been dreaming about, even the ones you haven't told anyone about yet. I hope you become everything you want to be, and I hope you always remember that there's someone who genuinely believes in you and will always be proud of you.</p>
+      <p>And selfishly, I hope I get to be there for all of it. For the big achievements, the little wins, the random bad days, the late-night talks, the stupid arguments, the celebrations, and all the memories we haven't made yet.</p>
+      <p>Eight years of knowing you, two years of loving you like this, and I still want more.</p>
+      <p>So happy birthday to the boy who somehow became my favorite person in the whole world. I love you more than I know how to put into words, and I'm so lucky that out of everyone in this world, I get to call you mine. 🤍</p>
+      <p>Now go enjoy being 20, birthday boy. And yes, you're officially getting older. I'll try to be nice about it. Maybe. 😂❤️</p>
+      <p>Happy 20th, my love.<br>Here's to you, to us, and to all the years still waiting for us. 🤍</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">Exhibit F</span>
+    <h2>Us, in Evidence</h2>
+    <p class="lede">Presented to the court as further proof that we're kind of adorable.</p>
+    <div class="gallery-grid">
+      <div class="polaroid">
+        <img src="us-4.jpeg">
+      </div>
+      <div class="polaroid">
+        <img src="us-3.jpeg">
+      </div>
+      <div class="polaroid">
+        <img src="us-2.jpeg">
+      </div>
+      <div class="polaroid">
+        <img src="us-1.jpeg">
+      </div>
+      <div class="polaroid">
+        <video src="us-video-1.mp4" controls playsinline class="quiet-vid"></video>
+      </div>
+      <div class="polaroid">
+        <video src="us-video-2.mp4" controls playsinline class="quiet-vid"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wish-zone">
+  <div class="wrap">
+    <span class="tag">Last thing</span>
+    <h2>Go on, make a wish</h2>
+    <p class="lede">You know the drill.</p>
+    <button class="wish-btn" onclick="makeItRain()">Blow out the candle 🕯️</button>
+    <div class="wish-note" id="wishNote">Whatever you wished for, I hope it comes true. Happy birthday. 🎉</div>
+  </div>
+</section>
+
+<footer>made with way too much love, for Sohaip</footer>
+
+<script>
+function makeItRain(){
+  const colors = ['#C1603C', '#E3A857', '#74875A', '#FBF1E1'];
+  const count = 90;
+  for(let i=0;i<count;i++){
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random()*100 + 'vw';
+    piece.style.background = colors[Math.floor(Math.random()*colors.length)];
+    piece.style.animationDuration = (2.5 + Math.random()*1.8) + 's';
+    piece.style.opacity = 0.7 + Math.random()*0.3;
+    document.body.appendChild(piece);
+    setTimeout(()=> piece.remove(), 4500);
+  }
+  const note = document.getElementById('wishNote');
+  note.classList.add('show');
+}
+
+document.querySelectorAll('.quiet-vid').forEach(function(vid){
+  vid.volume = 0.35;
+});
+
+function toggleSong(){
+  const audio = document.getElementById('ourSong');
+  const icon = document.getElementById('vinylIcon');
+  const label = document.getElementById('songBtnLabel');
+  const note = document.getElementById('songNote');
+
+  if(audio.paused){
+    audio.play();
+    icon.classList.add('spin');
+    label.textContent = 'Pause our song';
+    note.classList.add('show');
+  } else {
+    audio.pause();
+    icon.classList.remove('spin');
+    label.textContent = 'Play our song';
+  }
+}
+</script>
+
+</body>
+</html>
